@@ -5,21 +5,22 @@ const teamMembers = [
   'Belen Vilcacundo',
   'Sandra Chiluiza',
   'Andersson Sanchez',
-  'Dani Muzo',
   'Kevin Aldas',
   'Pamela Sanchez',
   'Yamilet Zambrano',
   'Alexander Cardenas',
   'Paola Argüello',
   'Nolasco Ramirez',
-  'Gabriela Castro',
-  'Liliana Acurio',
-  'Julio Garcia',
-  'Daniel Rebelo',
-  'Esteban Lopez'
+  'Andres Mejia',
+  'Fernando Ortiz',
+  'Daniel Guizado',
+  'Keila Lara',
+  'Vanessa Duran',
+  'Betty Estrella',
+  'Yajaira Ruiz'
 ]
 
-const APPS_SCRIPT_URL = 'PEGAR_AQUI_TU_URL_DE_APPS_SCRIPT'
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrvX2YFZJ_L2yfogbBltNkRubK-rjuL7BrJQG8ln8HibIrz2Atn5ZIVcc6wi_HS3sKiw/exec'
 
 function App() {
   const videoRef = useRef(null)
