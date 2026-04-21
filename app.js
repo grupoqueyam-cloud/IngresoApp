@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'PEGAR_AQUI_TU_URL_DE_APPS_SCRIPT'
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrvX2YFZJ_L2yfogbBltNkRubK-rjuL7BrJQG8ln8HibIrz2Atn5ZIVcc6wi_HS3sKiw/exec'
 
 const teamMembers = [
   'Edwin Ramos',
