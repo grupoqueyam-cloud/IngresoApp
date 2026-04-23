@@ -1,22 +1,18 @@
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4w0DHTxC9odT1QrrjaEJjJPxKGDyVSD8gZK4aD1Y5oUnhzuTRKyhbkmfKWpU7mBCMGQ/exec'
 
 const teamMembers = [
-  'Edwin Ramos',
-  'Belen Vilcacundo',
-  'Sandra Chiluiza',
-  'Andersson Sanchez',
-  'Dani Muzo',
   'Kevin Aldas',
+  'Sandra Chiluiza',
+  'Vanessa Duran',
+  'Daniel Guizado',
+  'Keyla Lara',
+  'Jose Ojeda',
+  'Fernando Ortiz',
+  'Edwin Ramos',
+  'Yajaira Ruiz',
+  'Andersson Sanchez',
   'Pamela Sanchez',
-  'Yamilet Zambrano',
-  'Alexander Cardenas',
-  'Paola Argüello',
-  'Nolasco Ramirez',
-  'Gabriela Castro',
-  'Liliana Acurio',
-  'Julio Garcia',
-  'Daniel Rebelo',
-  'Esteban Lopez'
+  'Belen Vilcacundo'
 ]
 
 const video = document.getElementById('video')
@@ -57,20 +53,20 @@ function getStatusByEvent(eventName, now) {
       return 'Atrasado'
     }
     case 'Salida al almuerzo': {
-      const expected = 13 * 60
+      const expected = 13 * 60 + 10
       if (current < expected) return 'Salida anticipada a almuerzo'
       if (current === expected) return 'En horario'
       return 'Salida almuerzo registrada'
     }
     case 'Regreso del almuerzo': {
       const start = 15 * 60
-      const max = 15 * 60 + 5
+      const max = 15 * 60 + 10
       if (current < start) return 'Anticipado'
       if (current <= max) return 'A tiempo'
       return 'Atrasado'
     }
     case 'Salida a casa': {
-      const expected = 18 * 60
+      const expected = 18 * 60 + 10
       if (current < expected) return 'Salida anticipada'
       if (current === expected) return 'En horario'
       return 'Salida registrada'
