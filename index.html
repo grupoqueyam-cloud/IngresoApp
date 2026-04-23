@@ -12,7 +12,7 @@
       <div class="header">
         <div>
           <h1>Control Biométrico de Asistencia</h1>
-          <p class="subtitle">Registro web con cámara y Google Sheets</p>
+          <p class="subtitle">Registro individual con cámara y Google Sheets</p>
         </div>
         <div class="clock-box">
           <span class="clock-label">Hora actual</span>
@@ -58,6 +58,18 @@
             <div id="lastLogContent">
               <p>No existe ningún registro todavía.</p>
             </div>
+          </div>
+
+          <div class="rules-box">
+            <h3>Control activo</h3>
+            <p>Cada persona solo puede registrar una vez por día cada uno de estos eventos:</p>
+            <ul>
+              <li>Ingreso</li>
+              <li>Salida al almuerzo</li>
+              <li>Regreso del almuerzo</li>
+              <li>Salida a casa</li>
+            </ul>
+            <p>Los registros se guardan en una hoja individual por persona dentro de Google Sheets.</p>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrvX2YFZJ_L2yfogbBltNkRubK-rjuL7BrJQG8ln8HibIrz2Atn5ZIVcc6wi_HS3sKiw/exec'
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4w0DHTxC9odT1QrrjaEJjJPxKGDyVSD8gZK4aD1Y5oUnhzuTRKyhbkmfKWpU7mBCMGQ/exec'
 
 const teamMembers = [
   'Edwin Ramos',
@@ -131,11 +131,50 @@ function setButtonsDisabled(disabled) {
 function updateLastLog(payload) {
   lastLogContent.innerHTML = `
     <p><strong>Persona:</strong> ${payload.nombreCompleto}</p>
+    <p><strong>Hoja:</strong> ${payload.hojaDestino || sanitizeSheetName(payload.nombreCompleto)}</p>
     <p><strong>Fecha:</strong> ${payload.fecha}</p>
     <p><strong>Hora:</strong> ${payload.hora}</p>
     <p><strong>Evento:</strong> ${payload.evento}</p>
     <p><strong>Estado:</strong> ${payload.estado}</p>
   `
+}
+
+function updateClock() {
+  const now = new Date()
+  clockText.textContent = `${formatDate(now)} ${formatTime(now)}`
+}
+
+function sanitizeSheetName(name) {
+  return name
+    .replace(/[\\/?*\[\]:]/g, '')
+    .substring(0, 99)
+    .trim()
+}
+
+function getDailyLocalKey(member, date) {
+  return `biometric-control-${member}-${date}`
+}
+
+function getDailyLocalEvents(member, date) {
+  const data = localStorage.getItem(getDailyLocalKey(member, date))
+  if (!data) return {}
+
+  try {
+    return JSON.parse(data)
+  } catch {
+    return {}
+  }
+}
+
+function saveDailyLocalEvent(member, date, eventName, payload) {
+  const current = getDailyLocalEvents(member, date)
+  current[eventName] = payload
+  localStorage.setItem(getDailyLocalKey(member, date), JSON.stringify(current))
+}
+
+function isDuplicateLocal(member, date, eventName) {
+  const current = getDailyLocalEvents(member, date)
+  return Boolean(current[eventName])
 }
 
 async function registerEvent(eventName) {
@@ -151,13 +190,22 @@ async function registerEvent(eventName) {
     return
   }
 
+  const now = new Date()
+  const today = formatDate(now)
+  const member = memberSelect.value
+
+  if (isDuplicateLocal(member, today, eventName)) {
+    showMessage(`Control bloqueado: ${member} ya registró hoy el evento "${eventName}".`, 'error')
+    return
+  }
+
   try {
     setButtonsDisabled(true)
 
-    const now = new Date()
     const payload = {
-      nombreCompleto: memberSelect.value,
-      fecha: formatDate(now),
+      nombreCompleto: member,
+      hojaDestino: sanitizeSheetName(member),
+      fecha: today,
       hora: formatTime(now),
       evento: eventName,
       estado: getStatusByEvent(eventName, now),
@@ -176,9 +224,10 @@ async function registerEvent(eventName) {
     const result = await response.json()
 
     if (result.success) {
-      showMessage(`Registro exitoso: ${payload.nombreCompleto} - ${payload.evento}`, 'success')
+      showMessage(`Registro exitoso: ${payload.nombreCompleto} - ${payload.evento} - Hoja: ${payload.hojaDestino}`, 'success')
       updateLastLog(payload)
       localStorage.setItem('lastBiometricLog', JSON.stringify(payload))
+      saveDailyLocalEvent(member, today, eventName, payload)
     } else {
       showMessage(result.message || 'No se pudo registrar en Google Sheets.', 'error')
     }
@@ -200,11 +249,6 @@ function loadLastLog() {
   } catch (e) {
     console.error(e)
   }
-}
-
-function updateClock() {
-  const now = new Date()
-  clockText.textContent = `${formatDate(now)} ${formatTime(now)}`
 }
 
 buttons.forEach(button => {

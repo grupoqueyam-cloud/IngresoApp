@@ -19,7 +19,7 @@ body {
 
 .card {
   width: 100%;
-  max-width: 1220px;
+  max-width: 1240px;
   background: #ffffff;
   border-radius: 22px;
   padding: 26px;
@@ -176,7 +176,8 @@ button:disabled {
   border: 1px solid #f4bcbc;
 }
 
-.last-log-box {
+.last-log-box,
+.rules-box {
   margin-top: 10px;
   padding: 18px;
   border-radius: 16px;
@@ -184,11 +185,14 @@ button:disabled {
   border: 1px solid #dae4ee;
 }
 
-.last-log-box h3 {
+.last-log-box h3,
+.rules-box h3 {
   margin-top: 0;
 }
 
-.last-log-box p {
+.last-log-box p,
+.rules-box p,
+.rules-box li {
   margin: 8px 0;
 }
 
