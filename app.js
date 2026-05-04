@@ -12,6 +12,7 @@ const teamMembers = [
   'Yajaira Ruiz',
   'Andersson Sanchez',
   'Pamela Sanchez',
+  'Daniela Chango',
   'Belen Vilcacundo'
 ]
 
