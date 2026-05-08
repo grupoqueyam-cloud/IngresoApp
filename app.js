@@ -3,16 +3,13 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4w0DHTxC9odT1
 const teamMembers = [
   'Kevin Aldas',
   'Sandra Chiluiza',
-  'Vanessa Duran',
   'Daniel Guizado',
-  'Keyla Lara',
   'Jose Ojeda',
   'Fernando Ortiz',
   'Edwin Ramos',
   'Yajaira Ruiz',
   'Andersson Sanchez',
   'Pamela Sanchez',
-  'Daniela Chango',
   'Belen Vilcacundo'
 ]
 
