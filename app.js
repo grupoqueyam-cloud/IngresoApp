@@ -6,7 +6,7 @@ const teamMembers = [
   'Jose Ojeda',
   'Fernando Ortiz',
   'Edwin Ramos',
-  'Guissel Gomez',
+  'Gissel Gomez',
   'Pamela Sanchez',
   'Belen Vilcacundo'
 ]
