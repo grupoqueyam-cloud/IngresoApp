@@ -8,6 +8,11 @@ const teamMembers = [
   'Edwin Ramos',
   'Gissel Gomez',
   'Pamela Sanchez',
+  'Kevin Aldas',
+  'Diego Gomez',
+  'Gabriela Enriquez',
+  'Andres Cabezas',
+  'Fausto Chasi',
   'Belen Vilcacundo'
 ]
 
