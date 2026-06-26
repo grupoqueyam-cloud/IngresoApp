@@ -12,6 +12,8 @@ const teamMembers = [
   'Diego Gomez',
   'Gabriela Enriquez',
   'Andres Cabezas',
+  'Ana Arias',
+  'Michael Haro',
   'Fausto Chasi',
   'Belen Vilcacundo'
 ]
