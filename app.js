@@ -1,18 +1,18 @@
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4w0DHTxC9odT1QrrjaEJjJPxKGDyVSD8gZK4aD1Y5oUnhzuTRKyhbkmfKWpU7mBCMGQ/exec'
 
 const teamMembers = [
-  'Sandra Chiluiza',
-  'Camila Valarezo',
-  'Jose Ojeda',
-  'Fernando Ortiz',
-  'Edwin Ramos',
-  'Gissel Gomez',
-  'Pamela Sanchez',
-  'Diego Gomez',
-  'Gabriela Enriquez',
-  'Andres Cabezas',
   'Ana Arias',
-  'Fausto Chasi'
+  'Andres Cabezas',
+  'Camila Valarezo',
+  'Diego Gomez',
+  'Edwin Ramos',
+  'Fausto Chasi',
+  'Fernando Ortiz',
+  'Gabriela Enriquez',
+  'Gissel Gomez',
+  'Jose Ojeda',
+  'Pamela Sanchez',
+  'Sandra Chiluiza'
 ]
 
 const video = document.getElementById('video')
