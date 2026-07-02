@@ -12,7 +12,7 @@ const teamMembers = [
   'Gabriela Enriquez',
   'Andres Cabezas',
   'Ana Arias',
-  'Fausto Chasi',
+  'Fausto Chasi'
 ]
 
 const video = document.getElementById('video')
