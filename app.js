@@ -8,14 +8,11 @@ const teamMembers = [
   'Edwin Ramos',
   'Gissel Gomez',
   'Pamela Sanchez',
-  'Kevin Aldas',
   'Diego Gomez',
   'Gabriela Enriquez',
   'Andres Cabezas',
   'Ana Arias',
-  'Michael Haro',
-  'Fausto Chasi',
-  'Belen Vilcacundo'
+  'Fausto Chasi'
 ]
 
 const video = document.getElementById('video')
