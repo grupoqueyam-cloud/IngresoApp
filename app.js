@@ -12,6 +12,10 @@ const teamMembers = [
   'Gissel Gomez',
   'Jose Ojeda',
   'Pamela Sanchez',
+  'Monserrate Ruiz',
+  'Joselyn Torres',
+  'Javier Lascano',
+  'Christian Velasquez',
   'Sandra Chiluiza'
 ]
 
