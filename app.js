@@ -8,14 +8,14 @@ const teamMembers = [
   'Edwin Ramos',
   'Fausto Chasi',
   'Fernando Ortiz',
-  'Gabriela Enriquez',
   'Gissel Gomez',
   'Jose Ojeda',
   'Pamela Sanchez',
   'Monserrate Ruiz',
   'Joselyn Torres',
-  'Javier Lascano',
   'Christian Velasquez',
+  'David Maya',
+  'Camila Pico',
   'Sandra Chiluiza'
 ]
 
