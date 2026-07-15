@@ -6,7 +6,6 @@ const teamMembers = [
   'Camila Valarezo',
   'Diego Gomez',
   'Edwin Ramos',
-  'Fausto Chasi',
   'Fernando Ortiz',
   'Gissel Gomez',
   'Jose Ojeda',
@@ -16,6 +15,9 @@ const teamMembers = [
   'Christian Velasquez',
   'David Maya',
   'Camila Pico',
+  'Daniela Tibanlombo',
+  'Yessenia Londo',
+  'Anthony Chaparro',
   'Sandra Chiluiza'
 ]
 
